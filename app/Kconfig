@@ -1,0 +1,9 @@
+config BLINK_SLEEP_TIME_MS
+    int "led prompt"
+    default 1000
+    range 100 2000
+    help 
+        help string can be mutliline 
+        like this one .
+
+source "Kconfig.zephyr"

@@ -1,0 +1,15 @@
+manifest:
+  version: "1.0"
+
+  projects:
+    - name: zephyr
+      url: https://github.com/zephyrproject-rtos/zephyr
+      revision: v4.5.0-rc3
+      import:
+        name-allowlist:
+          - cmsis_6
+          - hal_stm32
+        path-prefix: deps
+
+  self:
+    path: zephyr-course
