@@ -1,60 +1,76 @@
-menuconfig LED_SUBSYSTEM
-bool "Led Subsystem"
-default y
-help 
-    Enable led subsystem 
-if LED_SUBSYSTEM
-choice LED_BLINK_TIME
-    prompt "LED Blink sleep time"
-    default BLINK_1S
 
-config BLINK_250MS
-    bool "250ms (Fast)"
 
-config BLINK_500MS
-    bool "500ms"
 
-config BLINK_1S
-    bool "1s (mediun)"
+config APP_HEARTBEAT_PERIOD_MS
+int "Heart Beat LED periodin (MS)"
+default 500 
+range 100 2000
+
+
+
+
+
+
+
+
+source "Kconfig.zephyr"
+
+# menuconfig LED_SUBSYSTEM
+# bool "Led Subsystem"
+# default y
+# help 
+#     Enable led subsystem 
+# if LED_SUBSYSTEM
+# choice LED_BLINK_TIME
+#     prompt "LED Blink sleep time"
+#     default BLINK_1S
+
+# config BLINK_250MS
+#     bool "250ms (Fast)"
+
+# config BLINK_500MS
+#     bool "500ms"
+
+# config BLINK_1S
+#     bool "1s (mediun)"
     
 
-config BLINK_2S
-    bool "2 (Slow)"
+# config BLINK_2S
+#     bool "2 (Slow)"
 
-endchoice
+# endchoice
 
-config BLINK_SLEEP_TIME_MS
-    int 
-    default 250 if BLINK_250MS
-    default 500 if BLINK_500MS
-    default 1000 if BLINK_1S
-    default 2000 if BLINK_2S
+# config BLINK_SLEEP_TIME_MS
+#     int 
+#     default 250 if BLINK_250MS
+#     default 500 if BLINK_500MS
+#     default 1000 if BLINK_1S
+#     default 2000 if BLINK_2S
 
-menuconfig LED_ADVANCED
-bool "Advanced LED Settings"
-if LED_ADVANCED
-config LED_BRIGHTNESS
-    int "LED brightness (0-100)"
-    range 0 100
-    default 100
+# menuconfig LED_ADVANCED
+# bool "Advanced LED Settings"
+# if LED_ADVANCED
+# config LED_BRIGHTNESS
+#     int "LED brightness (0-100)"
+#     range 0 100
+#     default 100
 
-config LED_FADE_MS
-    int "LED fade duration (ms)"
-    range 0 5000
-    default 500
-endif 
+# config LED_FADE_MS
+#     int "LED fade duration (ms)"
+#     range 0 5000
+#     default 500
+# endif 
+# menu "Expert settings"
+#     visible if LED_ADVANCED 
 
-menu "Expert settings"
-    visible if LED_ADVANCED 
-
-config LED_DEBUG
-    bool "ENable LEd Debugging"
+# config LED_DEBUG
+#     bool "ENable LEd Debugging"
 
 
-config LED_CUSTOM_PATTERN 
-    bool "Custom blink pattern"
-endmenu
-endif
+# config LED_CUSTOM_PATTERN 
+#     bool "Custom blink pattern"
+# endmenu
+# endif
 
 
 # choice 
@@ -84,4 +100,3 @@ endif
 #     default 2000 if BLINK_SPEEED_2000MS
 #     default 0
 
-source "Kconfig.zephyr"
