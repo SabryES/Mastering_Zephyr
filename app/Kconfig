@@ -16,6 +16,7 @@ config BLINK_500MS
 
 config BLINK_1S
     bool "1s (mediun)"
+    
 
 config BLINK_2S
     bool "2 (Slow)"
