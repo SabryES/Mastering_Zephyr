@@ -7,4 +7,7 @@ find_package(Zephyr REQUIRED HINTS $ENV{ZEPHYR_BASE})
 project(zephyr_course_app)
 
 # Add your source files (using main.cpp since you created a C++ file earlier)
-target_sources(app PRIVATE src/main.cpp)
+target_sources(app PRIVATE 
+                    src/main.c
+                    
+                    )

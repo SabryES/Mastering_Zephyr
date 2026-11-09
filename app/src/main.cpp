@@ -6,6 +6,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+ //commenting that because i use new board from scratch so its simple one
+ #if 1
+
 #include <stdio.h>
 #include <zephyr/kernel.h>
 #include <zephyr/drivers/gpio.h>
@@ -87,10 +90,17 @@ int ret;
     return 0;
 }
 
+#endif
 
 
 
+// #include <zephyr/kernel.h>
+// #include <zephyr/sys/printk.h>
 
-
+// int main(void)
+// {
+//     printk("Hello World!\n");
+//     return 0;
+// }
 
 

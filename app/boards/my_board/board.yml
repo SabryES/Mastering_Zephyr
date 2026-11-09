@@ -1,0 +1,7 @@
+board:
+  name : my_board
+  full_name : my_board
+  vendor : iomico
+  socs:
+    - name: stm32f446xx
+    
